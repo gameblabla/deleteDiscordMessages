@@ -267,10 +267,6 @@
             if (messagesToDelete.length > 0) {
 
                 if (++iterations < 1) {
-                    log.verb(`Waiting for your confirmation...`);
-                    if (!await ask(`Do you want to delete ~${total} messages?\nEstimated time: ${etr}\n\n---- Preview ----\n` +
-                        messagesToDelete.map(m => `${m.author.username}#${m.author.discriminator}: ${m.attachments.length ? '[ATTACHMENTS]' : m.content}`).join('\n')))
-                            return end(log.error('Aborted by you!'));
                     log.verb(`OK`);
                 }
                 
